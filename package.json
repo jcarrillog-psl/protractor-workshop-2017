@@ -24,5 +24,15 @@
   "homepage": "https://github.com/jcarrillog-psl/protractor-workshop-2017#readme",
   "dependencies": {
     "protractor": "^5.4.1"
-  }
+  },
+  "devDependencies": {
+    "@types/jasminewd2": "^2.0.6",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "clean": "del dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "test" : "npm run build && protractor dist/protractor/config.js"
+  },
 }
