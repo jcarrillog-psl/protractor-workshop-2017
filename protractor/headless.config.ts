@@ -9,5 +9,11 @@ export const config: Config = {
 	onPrepare: () => {
 		browser.ignoreSynchronization = true ;
 		reporter();
+	},
+	capabilities: {//version headless of chrome
+		browserName: 'chrome' ,
+		chromeOptions: {
+			args: [ '--headless', '--disable-gpu', '--window-size=800,600' ]
+		}
 	}
 }
