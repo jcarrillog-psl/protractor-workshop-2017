@@ -4,10 +4,11 @@
   "description": "This is a Workshop about Protractor",
   "main": "index.js",
   "scripts": {
-    "clean": "del dist",
+    "clean": "del dist /Q",
     "prebuild": "npm run clean",
     "build": "tsc",
-    "test": "npm run build && protractor dist/protractor/config.js"
+    "test:local": "npm run build && protractor dist/protractor/config.js",
+    "test:headless": "npm run build && protractor dist/protractor/headless.config.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/jcarrillog-psl/protractor-workshop-2017#readme",
   "dependencies": {
+    "npm": "^6.5.0",
     "protractor": "^5.4.1"
   },
   "devDependencies": {
