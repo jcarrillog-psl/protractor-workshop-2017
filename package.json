@@ -29,7 +29,8 @@
   },
   "homepage": "https://github.com/jcarrillog-psl/protractor-workshop-2017#readme",
   "dependencies": {
-    "protractor": "^5.4.1"
+    "protractor": "^5.4.1",
+    "chromedriver": "^2.45"
   },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.6",
