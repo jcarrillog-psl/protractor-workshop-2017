@@ -10,7 +10,8 @@
     "test:local": "npm run build && protractor dist/protractor/config.js",
     "test:headless": "npm run build && protractor dist/protractor/headless.config.js",
     "test": "npm run test:headless",
-    "postinstall": "webdriver-manager update --gecko false"
+    "postinstall": "webdriver-manager update --gecko false",
+	"lint": "tslint --project tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -29,11 +30,15 @@
   },
   "homepage": "https://github.com/jcarrillog-psl/protractor-workshop-2017#readme",
   "dependencies": {
-    "protractor": "^5.4.1"
+    "npm": "^6.6.0",
+    "protractor": "^5.4.1",
+    "tslib": "^1.9.3",
+    "tslint": "^5.12.1"
   },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.6",
     "jasmine-spec-reporter": "^4.2.1",
+    "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.2.2"
   }
 }
