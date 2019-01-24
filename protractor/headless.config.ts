@@ -5,6 +5,7 @@ export const config: Config = {
   framework: 'jasmine' ,
   SELENIUM_PROMISE_MANAGER: false , // does not work on win10
   specs: ['../test/**/*.spec.js'],
+  getPageTimeout: 1000,
   noGlobals: true ,
   onPrepare: () => {
     browser.ignoreSynchronization = true ;
