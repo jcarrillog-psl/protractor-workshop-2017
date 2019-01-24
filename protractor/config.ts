@@ -5,7 +5,9 @@ export const config: Config = {
   framework: 'jasmine' ,
   seleniumAddress: 'http://localhost:4444/wd/hub' ,
   // SELENIUM_PROMISE_MANAGER: false,//does not work on win10
-  specs: ['../test/Google.spec.js'],
+  // specs: ['../test/Google.spec.js'],
+  specs: ['../test/**/*.spec.js'],
+  getPageTimeout: 1000,
   noGlobals: true ,
   onPrepare: () => {
     browser.ignoreSynchronization = true ;
