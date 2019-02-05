@@ -1,9 +1,12 @@
 import { $, browser } from 'protractor' ;
+
 describe('Buy a t-shirt' , () => {
+    
     beforeEach(() => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
     });
-    it( 'then should be bought a t-shirt' , async () => {
+    
+    it( 'then should be bought a t-shirt' , async () => { 
         await browser.get('http://automationpractice.com/');
         await (browser.sleep(10000));
         await $( '#block_top_menu > ul > li:nth-child(3) > a' ).click();
