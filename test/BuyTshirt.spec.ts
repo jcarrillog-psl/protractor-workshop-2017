@@ -41,7 +41,7 @@ describe('Buy a t-shirt' , () => {
         await summaryStepPage.goToSummaryStep();
         await (browser.sleep(5000));
         await signInStepPage.goToSignInStep();
-        await (browser.sleep(5000));
+        await (browser.sleep(15000));
         await addressStepPage.goToAddressStep();
         await (browser.sleep(5000));
         await shippingStepPage.goToShippingStep();
