@@ -9,6 +9,7 @@ import { AddressStepPage } from '../src/page' ;
 import { ShippingStepPage } from '../src/page' ;
 import { PaymentStepPage } from '../src/page' ;
 import { BankPaymentPage } from '../src/page' ;
+import { SignOutPage } from '../src/page' ;
 
 describe('Buy a t-shirt' , () => {
     const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -21,6 +22,7 @@ describe('Buy a t-shirt' , () => {
     const shippingStepPage: ShippingStepPage = new ShippingStepPage();
     const paymentStepPage: PaymentStepPage = new PaymentStepPage();
     const bankPaymentPage: BankPaymentPage = new BankPaymentPage();
+    const signOutPage: SignOutPage = new SignOutPage();
     
     beforeEach(() => {
     
