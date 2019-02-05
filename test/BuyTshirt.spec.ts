@@ -9,6 +9,7 @@ import { AddressStepPage } from '../src/page' ;
 import { ShippingStepPage } from '../src/page' ;
 import { PaymentStepPage } from '../src/page' ;
 import { BankPaymentPage } from '../src/page' ;
+import { SignOutPage } from '../src/page' ;
 
 describe('Buy a t-shirt' , () => {
     const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -21,6 +22,8 @@ describe('Buy a t-shirt' , () => {
     const shippingStepPage: ShippingStepPage = new ShippingStepPage();
     const paymentStepPage: PaymentStepPage = new PaymentStepPage();
     const bankPaymentPage: BankPaymentPage = new BankPaymentPage();
+    const signOutPage: SignOutPage = new SignOutPage();
+    
     beforeEach(() => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
     });
@@ -37,6 +40,8 @@ describe('Buy a t-shirt' , () => {
         await (browser.sleep(3000));
         await summaryStepPage.goToSummaryStep();
         await (browser.sleep(3000));
+        await signInStepPage.goToUsernameEmail();
+        await signInStepPage.goToUsernamePass();
         await signInStepPage.goToSignInStep();
         await (browser.sleep(3000));
         await addressStepPage.goToAddressStep();
@@ -49,5 +54,7 @@ describe('Buy a t-shirt' , () => {
         await (browser.sleep(3000));
         await expect($( '#center_column > div > p > strong' ).getText())
         .toBe( 'Your order on My Store is complete.' );
+        await (browser.sleep(3000));
+        await signOutPage.goToSignOut();
     });
 });
