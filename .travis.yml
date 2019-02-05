@@ -8,6 +8,5 @@ node_js:
 - '10'
 addons:
   chrome: stable
-branches: master_sca_css_selector
 except:
 - /^v\d+\.\d+\.\d+$/
