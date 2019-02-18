@@ -1,12 +1,13 @@
+dist: trusty
 language: node_js
 cache:
-directories:
-- node_modules
+    directories:
+        - node_modules
 notifications:
 email: false
 node_js:
-- '10'
+    - '10'
 addons:
-  chrome: stable
+    chrome: stable
 except:
-- /^v\d+\.\d+\.\d+$/
+    - /^v\d+\.\d+\.\d+$/
