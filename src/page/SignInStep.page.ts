@@ -5,13 +5,13 @@ export class SignInStepPage {
     private userPass: ElementFinder;
     private submitButton: ElementFinder ;
 	
-	constructor () {
+	constructor() {
 		this.userEmail = $('#email');
 	}
-	constructor () {
+	constructor() {
 		this.userPass = $('#passwd');
 	}
-	constructor () {
+	constructor() {
 		this.submitButton = $('#SubmitLogin > span');
 	}
 	

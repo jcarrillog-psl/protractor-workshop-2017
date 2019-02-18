@@ -2,7 +2,8 @@ import { $, ElementFinder, promise } from 'protractor' ;
 
 export class BankPaymentPage {
     private get bankPayment: ElementFinder;
-	constructor{
+	
+	constructor() {
       this.bankPayment = $( '#cart_navigation > button > span' );
     }
     public async goToBankPayment(): promise.Promise<void> {

@@ -3,7 +3,7 @@ import { $, ElementFinder, promise } from 'protractor' ;
 export class SignOutPage {
     private signOut: ElementFinder;
       
-	constructour {
+	constructour() {
 		this.signOut = $( '#header > div:nth-child(2) > div > div > nav > div:nth-child(2) > a' );
     }
 	

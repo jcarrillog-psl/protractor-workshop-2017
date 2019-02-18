@@ -3,10 +3,10 @@ import { $, ElementFinder, promise } from 'protractor' ;
 export class SummaryStepPage {
     private summaryStep: ElementFinder;
      
-	constructor {
+	constructor() {
 	 this.summaryStep = $( '.cart_navigation span' );
     }
     public async goToSummaryStep(): promise.Promise<void> {
       await this.summaryStep.click();
-	  }
+	}
 }
