@@ -1,7 +1,7 @@
 import { $, ElementFinder, promise } from 'protractor' ;
 
 export class SummaryStepPage {
-    private summaryStep(): ElementFinder;
+    private summaryStep: ElementFinder;
      
 	constructor {
 	 this.summaryStep = $( '.cart_navigation span' );

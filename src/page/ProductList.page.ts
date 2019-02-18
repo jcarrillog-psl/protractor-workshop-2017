@@ -1,7 +1,7 @@
 import { $, ElementFinder, promise } from 'protractor' ;
 
 export class ProductListPage {
-    private productList(): ElementFinder;
+    private productList: ElementFinder;
 	construnctor{
 		this.productList = $( '.button-container > a' );
     }

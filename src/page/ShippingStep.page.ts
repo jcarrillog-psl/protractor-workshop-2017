@@ -1,8 +1,8 @@
 import { $, ElementFinder, promise } from 'protractor' ;
 
 export class ShippingStepPage {
-    private acceptMark(): ElementFinder;
-	private shippingStep(): ElementFinder;
+    private acceptMark: ElementFinder;
+	private shippingStep: ElementFinder;
 	constructor () {
 		this.acceptMark = $('#cgv');
 	} 

@@ -1,7 +1,7 @@
 import { $, ElementFinder, promise } from 'protractor' ;
 
 export class AddressStepPage {
-    private addressStep(): ElementFinder;
+    private addressStep: ElementFinder;
 	constructor{
 	this.addressStep = $( '#center_column > form > p > button > span' );
     }
