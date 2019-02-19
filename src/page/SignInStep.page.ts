@@ -1,4 +1,4 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class SignInStepPage {
     private userEmail: ElementFinder;
@@ -7,21 +7,17 @@ export class SignInStepPage {
 	
 	constructor() {
 		this.userEmail = $('#email');
-	}
-	constructor() {
 		this.userPass = $('#passwd');
-	}
-	constructor() {
 		this.submitButton = $('#SubmitLogin > span');
 	}
 	
-    public async goToSubmitButton(): promise.Promise<void> {
+    public async goToSubmitButton(): Promise<void> {
       await this.submitButton.click();
     }
-    public async goToUserEmail(): promise.Promise<void> {
+    public async goToUserEmail(): Promise<void> {
       await this.userEmail.sendKeys( 'aperdomobo@gmail.com' );
     }
-     public async goToUserPass(): promise.Promise<void> {
+     public async goToUserPass(): Promise<void> {
       await this.userPass.sendKeys( 'WorkshopProtractor' );
     }
 }

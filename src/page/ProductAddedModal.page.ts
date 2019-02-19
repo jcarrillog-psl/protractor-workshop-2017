@@ -1,4 +1,4 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class ProductAddedModalPage {
     private productAddedModal: ElementFinder;
@@ -6,7 +6,7 @@ export class ProductAddedModalPage {
 	constructor() {
 		this.productAddedModal = $( '#add_to_cart > button > span' );
     }
-    public async goToProductAddedModal(): promise.Promise<void> {
+    public async goToProductAddedModal(): Promise<void> {
       await this.productAddedModal.click();
     }
 }

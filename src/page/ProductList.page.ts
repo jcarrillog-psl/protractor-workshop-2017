@@ -1,4 +1,4 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class ProductListPage {
     private productList: ElementFinder;
@@ -6,7 +6,7 @@ export class ProductListPage {
 	construnctor(){
 		this.productList = $( '.button-container > a' );
     }
-    public async goToProductList(): promise.Promise<void> {
+    public async goToProductList(): Promise<void> {
       await this.productList.click();
     }
 }

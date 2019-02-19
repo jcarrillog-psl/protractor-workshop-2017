@@ -1,4 +1,4 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class ProductDetailPage {
     private productDetail: ElementFinder;
@@ -6,7 +6,7 @@ export class ProductDetailPage {
 	constructor() {
 		this.productDetail = $( '#center_column > ul > li > div > div.left-block > div > a.product_img_link > img' );
     }
-    public async goToProductDetail(): promise.Promise<void> {
+    public async goToProductDetail(): Promise<void> {
       await this.productDetail.click();
     }
 }
