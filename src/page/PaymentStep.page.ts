@@ -1,10 +1,12 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class PaymentStepPage {
-    private get paymentStep(): ElementFinder {
-      return $( '#HOOK_PAYMENT > div:nth-child(1) > div > p > a' );
+    private paymentStep: ElementFinder;
+	
+	constructor() {
+		this.paymentStep = $( '#HOOK_PAYMENT > div:nth-child(1) > div > p > a' );
     }
-    public goToPaymentStep(): promise.Promise<void> {
-      return this.paymentStep.click();
+    public async goToPaymentStep(): Promise<void> {
+      await this.paymentStep.click();
     }
 }

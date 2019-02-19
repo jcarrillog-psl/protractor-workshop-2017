@@ -1,10 +1,12 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class AddressStepPage {
-    private get addressStep(): ElementFinder {
-      return $( '#center_column > form > p > button > span' );
+    private addressStep: ElementFinder;
+	
+	constructor() {
+		this.addressStep = $( '#center_column > form > p > button > span' );
     }
-    public goToAddressStep(): promise.Promise<void> {
-      return this.addressStep.click();
+    public async goToAddressStep(): Promise<void> {
+      await this.addressStep.click();
     }
 }

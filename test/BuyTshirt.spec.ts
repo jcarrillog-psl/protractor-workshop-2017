@@ -1,15 +1,16 @@
 import { $, browser } from 'protractor' ;
-import { MenuContentPage } from '../src/page' ;
-import { ProductDetailPage } from '../src/page' ;
-import { ProductAddedModalPage } from '../src/page' ;
-import { ProductListPage } from '../src/page' ;
-import { SummaryStepPage } from '../src/page' ;
-import { SignInStepPage } from '../src/page' ;
-import { AddressStepPage } from '../src/page' ;
-import { ShippingStepPage } from '../src/page' ;
-import { PaymentStepPage } from '../src/page' ;
-import { BankPaymentPage } from '../src/page' ;
-import { SignOutPage } from '../src/page' ;
+import { MenuContentPage 
+        , ProductDetailPage 
+        , ProductAddedModalPage 
+        , ProductListPage 
+        , SummaryStepPage 
+        , SignInStepPage 
+        , AddressStepPage
+        , AcceptTermsServiceStepPage
+        , ShippingStepPage
+        , PaymentStepPage 
+        , BankPaymentPage 
+        , SignOutSessionPage } from '../src/page' ;
 
 describe('Buy a t-shirt' , () => {
     const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -20,34 +21,41 @@ describe('Buy a t-shirt' , () => {
     const signInStepPage: SignInStepPage = new SignInStepPage();
     const addressStepPage: AddressStepPage = new AddressStepPage();
     const shippingStepPage: ShippingStepPage = new ShippingStepPage();
+    const acceptTermsServiceStepPage: AcceptTermsServiceStepPage = new AcceptTermsServiceStepPage();
     const paymentStepPage: PaymentStepPage = new PaymentStepPage();
     const bankPaymentPage: BankPaymentPage = new BankPaymentPage();
-    const signOutPage: SignOutPage = new SignOutPage();
+    const signOutSessionPage: SignOutSessionPage = new SignOutSessionPage();
     
     beforeEach(() => {
+    
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
     });
+    
     it( 'then should be bought a t-shirt' , async () => {
         await browser.get('http://automationpractice.com/');
-        await (browser.sleep(10000));
+        await (browser.sleep(3000));
         await menuContentPage.goToTShirtMenu();
         await (browser.sleep(3000));
         await productDetailPage.goToProductDetail();
         await (browser.sleep(3000));
         await productAddedModalPage.goToProductAddedModal();
         await (browser.sleep(3000));
-        await productListPage.goToProductList();
+        await productListPage.selectProduct();
         await (browser.sleep(3000));
         await summaryStepPage.goToSummaryStep();
         await (browser.sleep(3000));
-        await signInStepPage.goToUsernameEmail();
-        await signInStepPage.goToUsernamePass();
-        await signInStepPage.goToSignInStep();
+        await signInStepPage.goToUserEmail();
+        await (browser.sleep(3000));
+        await signInStepPage.goToUserPass();
+        await (browser.sleep(3000));
+        await signInStepPage.goToSubmitButton();
         await (browser.sleep(3000));
         await addressStepPage.goToAddressStep();
         await (browser.sleep(3000));
-        await shippingStepPage.goToShippingStep();
+        await acceptTermsServiceStepPage.goToAcceptTermsServiceStep();
         await (browser.sleep(3000));
+        await shippingStepPage.goToShippingStep();
+        await (browser.sleep(13000));
         await paymentStepPage.goToPaymentStep();
         await (browser.sleep(3000));
         await bankPaymentPage.goToBankPayment();
@@ -55,6 +63,6 @@ describe('Buy a t-shirt' , () => {
         await expect($( '#center_column > div > p > strong' ).getText())
         .toBe( 'Your order on My Store is complete.' );
         await (browser.sleep(3000));
-        await signOutPage.goToSignOut();
+        await signOutSessionPage.goToSignOutSession();
     });
 });

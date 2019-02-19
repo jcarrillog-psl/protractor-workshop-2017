@@ -1,10 +1,12 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class BankPaymentPage {
-    private get bankPayment(): ElementFinder {
-      return $( '#cart_navigation > button > span' );
+    private bankPayment: ElementFinder;
+	
+	constructor() {
+      this.bankPayment = $( '#cart_navigation > button > span' );
     }
-    public goToBankPayment(): promise.Promise<void> {
-      return this.bankPayment.click();
+    public async goToBankPayment(): Promise<void> {
+      await  this.bankPayment.click();
     }
 }

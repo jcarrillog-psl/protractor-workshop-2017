@@ -1,12 +1,11 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class ShippingStepPage {
-    private get shippingStep(): ElementFinder {
-      $( '#cgv' ).click();
-      setTimeout(function(){ },3000);
-      return $( '#form > p > button > span' );
-    }
-    public goToShippingStep(): promise.Promise<void> {
-      return this.shippingStep.click();
+	private shippingStep: ElementFinder;
+	constructor() {
+		this.shippingStep = $('#form > p > button > span');
+	} 
+    public async goToShippingStep(): Promise<void> {
+      await this.shippingStep.click();
     }
 }

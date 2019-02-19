@@ -4,7 +4,7 @@ export class ProductListPage {
     private get productList(): ElementFinder {
       return $( '.button-container > a' );
     }
-    public goToProductList(): promise.Promise<void> {
+    public selectProduct(): promise.Promise<void> {
       return this.productList.click();
     }
 }

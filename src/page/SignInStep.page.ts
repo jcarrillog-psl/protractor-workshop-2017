@@ -1,22 +1,23 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class SignInStepPage {
-    private get usernameEmail(): ElementFinder{
-      return $( '#email' );
+    private userEmail: ElementFinder;
+    private userPass: ElementFinder;
+    private submitButton: ElementFinder ;
+	
+	constructor() {
+		this.userEmail = $('#email');
+		this.userPass = $('#passwd');
+		this.submitButton = $('#SubmitLogin > span');
+	}
+	
+    public async goToSubmitButton(): Promise<void> {
+      await this.submitButton.click();
     }
-    private get usernamePass(): ElementFinder{
-      return $( '#passwd' );
+    public async goToUserEmail(): Promise<void> {
+      await this.userEmail.sendKeys( 'aperdomobo@gmail.com' );
     }
-    private get signInStep(): ElementFinder {
-      return $( '#SubmitLogin > span' );
-    }
-    public goToSignInStep(): promise.Promise<void> {
-      return this.signInStep.click();
-    }
-    public goToUsernameEmail(): promise.Promise<void> {
-      return this.usernameEmail.sendKeys( 'aperdomobo@gmail.com' );
-    }
-     public goToUsernamePass(): promise.Promise<void> {
-      return this.usernamePass.sendKeys( 'WorkshopProtractor' );
+     public async goToUserPass(): Promise<void> {
+      await this.userPass.sendKeys( 'WorkshopProtractor' );
     }
 }
