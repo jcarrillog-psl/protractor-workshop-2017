@@ -6,7 +6,7 @@ import { MenuContentPage
         , SummaryStepPage 
         , SignInStepPage 
         , AddressStepPage
-        , AcceptTermsServicePage
+        , AcceptTermsServiceStepPage
         , ShippingStepPage
         , PaymentStepPage 
         , BankPaymentPage 
@@ -21,7 +21,7 @@ describe('Buy a t-shirt' , () => {
     const signInStepPage: SignInStepPage = new SignInStepPage();
     const addressStepPage: AddressStepPage = new AddressStepPage();
     const shippingStepPage: ShippingStepPage = new ShippingStepPage();
-    const acceptTermsServicePage: AcceptTermsServiceStepPage = new AcceptTermsServiceStepPage();
+    const acceptTermsServiceStepPage: AcceptTermsServiceStepPage = new AcceptTermsServiceStepPage();
     const paymentStepPage: PaymentStepPage = new PaymentStepPage();
     const bankPaymentPage: BankPaymentPage = new BankPaymentPage();
     const signOutSessionPage: SignOutSessionPage = new SignOutSessionPage();
@@ -52,7 +52,7 @@ describe('Buy a t-shirt' , () => {
         await (browser.sleep(3000));
         await addressStepPage.goToAddressStep();
         await (browser.sleep(3000));
-        await acceptTermsServicePage.goToAcceptTermsServiceMark();
+        await acceptTermsServiceStepPage.goToAcceptTermsServiceStep();
         await (browser.sleep(3000));
         await shippingStepPage.goToShippingStep();
         await (browser.sleep(13000));

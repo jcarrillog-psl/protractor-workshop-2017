@@ -5,7 +5,7 @@ export class AcceptTermsServiceStepPage {
 	constructor() {
 		this.acceptMark = $('#cgv');
 	} 
-	public async goToAcceptTermsServiceMark(): Promise<void> {
+	public async goToAcceptTermsServiceStep(): Promise<void> {
       await this.acceptMark.click();
     }
 }
