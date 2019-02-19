@@ -4,7 +4,7 @@ export class ProductListPage {
     private productList: ElementFinder;
 	
 	construnctor(){
-		this.productList = $( '.button-container > a' );
+		this.productList = $('[style*="display: block;"] .button-container > a');
     }
     public async goToProductList(): Promise<void> {
       await this.productList.click();
