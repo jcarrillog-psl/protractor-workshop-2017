@@ -10,7 +10,7 @@ import { MenuContentPage
         , ShippingStepPage
         , PaymentStepPage 
         , BankPaymentPage 
-        , SignOutPage } from '../src/page' ;
+        , SignOutSessionPage } from '../src/page' ;
 
 describe('Buy a t-shirt' , () => {
     const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -44,11 +44,11 @@ describe('Buy a t-shirt' , () => {
         await (browser.sleep(3000));
         await summaryStepPage.goToSummaryStep();
         await (browser.sleep(3000));
-        await signInStepPage.goToUsernameEmail();
+        await signInStepPage.goToUserEmail();
         await (browser.sleep(3000));
-        await signInStepPage.goToUsernamePass();
+        await signInStepPage.goToUserPass();
         await (browser.sleep(3000));
-        await signInStepPage.goToSignInStep();
+        await signInStepPage.goToSubmitButton();
         await (browser.sleep(3000));
         await addressStepPage.goToAddressStep();
         await (browser.sleep(3000));

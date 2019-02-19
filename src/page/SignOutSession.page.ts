@@ -1,7 +1,7 @@
 import { $, ElementFinder } from 'protractor' ;
 
 export class SignOutSessionPage {
-    private signOut: ElementFinder;
+    private signOutSession: ElementFinder;
       
 	constructour() {
 		this.signOutSession = $( '#header > div:nth-child(2) > div > div > nav > div:nth-child(2) > a' );
