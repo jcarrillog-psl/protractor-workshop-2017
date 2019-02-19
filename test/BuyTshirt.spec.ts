@@ -40,7 +40,7 @@ describe('Buy a t-shirt' , () => {
         await (browser.sleep(3000));
         await productAddedModalPage.goToProductAddedModal();
         await (browser.sleep(3000));
-        await productListPage.selectProduct();
+        await productListPage.selectProduct('Faded Short Sleeve T-shirts');
         await (browser.sleep(3000));
         await summaryStepPage.goToSummaryStep();
         await (browser.sleep(3000));
