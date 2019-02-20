@@ -1,10 +1,13 @@
-import { $, ElementFinder, promise } from 'protractor' ;
+import { $, ElementFinder } from 'protractor' ;
 
 export class ProductListPage {
-    private get productList(): ElementFinder {
-      return $( '.button-container > a' );
+    private productList: ElementFinder;
+
+    constructor(){
+       this.productList = $( '.button-container > a' );
     }
-    public selectProduct(): promise.Promise<void> {
-      return this.productList.click();
+
+    public async selectProduct(): Promise<void> {
+      await this.productList.click();
     }
 }
