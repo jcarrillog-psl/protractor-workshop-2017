@@ -9,8 +9,7 @@ import { MenuContentPage,
          AcceptTermsServiceStepPage,
          ShippingStepPage,
          PaymentStepPage,
-         BankPaymentPage,
-         SignOutSessionPage } from '../src/page' ;
+         BankPaymentPage } from '../src/page' ;
 
 describe('Buy a t-shirt' , () => {
   const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -24,7 +23,6 @@ describe('Buy a t-shirt' , () => {
   const acceptTermsServiceStepPage: AcceptTermsServiceStepPage = new AcceptTermsServiceStepPage();
   const paymentStepPage: PaymentStepPage = new PaymentStepPage();
   const bankPaymentPage: BankPaymentPage = new BankPaymentPage();
-  const signOutSessionPage: SignOutSessionPage = new SignOutSessionPage();
 
   beforeEach(() => {
 
@@ -58,7 +56,5 @@ describe('Buy a t-shirt' , () => {
     await (browser.sleep(3000));
     await expect($('#center_column > div > p > strong').getText())
         .toBe('Your order on My Store is complete.');
-    await (browser.sleep(3000));
-    await signOutSessionPage.goToSignOutSession();
   });
 });
