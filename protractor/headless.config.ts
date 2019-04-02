@@ -7,10 +7,11 @@ export const config: Config = {
   // SELENIUM_PROMISE_MANAGER: false,//does not work on win10
   // specs: ['../test/Google.spec.js'],
   specs: ['../test/**/*.spec.js'],
-  getPageTimeout: 1000,
+  getPageTimeout: 3000,
   noGlobals: true ,
   onPrepare: () => {
     browser.ignoreSynchronization = true ;
+    browser.manage().timeouts().implicitlyWait(3000);
     reporter();
   },
   capabilities: {// version headless of chrome
@@ -18,5 +19,8 @@ export const config: Config = {
     chromeOptions: {
       args: ['--headless', '--disable-gpu', '--window-size=800,600']
     }
+  },
+  jasmineNodeOpts: {
+    defaultTimeoutInterval: 120000
   }
 };
