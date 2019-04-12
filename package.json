@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/jcarrillog-psl/protractor-workshop-2017#readme",
   "dependencies": {
-    "npm": "^6.8.0",
+    "npm": "^6.9.0",
     "protractor": "^5.4.1",
     "to": "^0.2.9",
     "tslib": "^1.9.3",
