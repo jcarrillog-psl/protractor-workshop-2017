@@ -6,3 +6,9 @@ exports.config = {
 		browser.ignoreSynchronization = true ;
 	}
 }
+capabilities: {
+    browserName: 'chrome',
+    chromeOptions: {
+      args: ['--no-sandbox']
+    },
+}
