@@ -3,9 +3,9 @@ exports.config = {
 	SELENIUM_PROMISE_MANAGER: false,
 	specs: [ 'test/Google.spec.js'],
   capabilities: {
-    browserName: 'chrome',
-    chromeOptions: {
-      args: ['--no-sandbox']
+    'browserName': 'chrome',
+    'chromeOptions': {
+      'args': ['--no-sandbox']
     },
   },
 	onPrepare: () => {
